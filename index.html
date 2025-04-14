@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Cadastre.com - Boostez vos ventes immobilières</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0060FF;
+            --secondary: #FFD700;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --light: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-border {
+            position: relative;
+        }
+        
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .gradient-border:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .button-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .button-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 96, 255, 0.3);
+        }
+        
+        .button-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .button-glow:hover::after {
+            opacity: 1;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 999;
+            width: 0%;
+        }
+        
+        .count-up {
+            counter-reset: count 0;
+            animation: count-animation 2s forwards;
+        }
+        
+        @keyframes count-animation {
+            from { counter-increment: count 0; }
+            to { counter-increment: count attr(data-count); }
+        }
+        
+        .count-up::after {
+            content: counter(count);
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-shine::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.05) 100%
+            );
+            transform: rotate(45deg);
+            transition: transform 0.7s;
+        }
+        
+        .card-shine:hover::before {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+    </style>
+    <meta name="description" content="Formation Cadastre.com - Boostez vos ventes immobilières">
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <section class="min-h-screen hero-pattern flex flex-col justify-center relative overflow-hidden py-20 px-4 md:px-8">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black/60 z-10"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(0,96,255,0.2),transparent_50%)]"></div>
+        </div>
+        
+        <div class="container mx-auto relative z-20 max-w-6xl">
+            <div class="text-center mb-8">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 text-sm font-semibold mb-4 border border-blue-700/30 fade-in">Formation en présentiel pour agents immobiliers</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight fade-in gradient-text">Boostez vos ventes immobilières avec <span class="block mt-2">Cadastre.com</span></h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 fade-in">Formation intensive + coaching terrain pour devenir expert en sectorisation et revalorisation d'invendus</p>
+                
+                <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center items-center">
+                    <a href="#contact" class="button-glow inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold rounded-lg px-8 py-4 transition transform hover:scale-105 shadow-lg hover:shadow-blue-500/50 fade-in">
+                        Je réserve ma place
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <p class="text-yellow-400 font-semibold fade-in"><i class="fas fa-hourglass-half mr-2"></i><span id="placesCounter" class="font-bold">9</span> places restantes</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 w-full max-w-4xl mx-auto relative float">
+                <div class="bg-gradient-to-r from-blue-800/20 to-blue-600/20 rounded-xl p-6 border border-blue-700/30 shadow-2xl backdrop-blur-sm">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-full md:w-1/2">
+                            <h3 class="text-xl font-bold mb-4 text-blue-300">Pourquoi cette formation est différente ?</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                    <span>Méthode testée sur plus de 500 agents</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                    <span>Pratique sur vos propres mandats</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                    <span>Suivi post-formation de 30 jours</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                    <span>100% finançable par votre OPCO</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <div class="relative w-full h-[400px] rounded-lg shadow-lg overflow-hidden bg-[#0A1929]">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+  
+  <!-- Main content container -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center p-6">
+    <!-- Title animation -->
+    <div class="text-center mb-6">
+      <h2 class="text-white text-4xl font-bold animate-title">Formation Présentiel</h2>
+      <h2 class="text-[#4a8eff] text-4xl font-bold animate-title-blue">Cadastre.com</h2>
+    </div>
+    
+    <!-- IMMO-MÈTRE animation -->
+    <div class="animate-gauge mb-8">
+      <div class="relative w-[150px] h-[75px]">
+        <div class="absolute inset-0 rounded-t-full overflow-hidden flex">
+          <div class="w-1/3 bg-green-500"></div>
+          <div class="w-1/3 bg-yellow-400"></div>
+          <div class="w-1/3 bg-red-500"></div>
+        </div>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-[70px] bg-white origin-bottom animate-needle"></div>
+      </div>
+      <div class="text-center mt-2 font-bold text-xl">
+        <span class="text-green-500">IMMO</span>-<span class="text-red-500">MÈTRE</span>
+      </div>
+    </div>
+    
+    <!-- Description text -->
+    <div class="text-white text-center max-w-[80%] animate-text">
+      
+    </div>
+    
+    <!-- Author credit -->
+    <div class="absolute bottom-4 left-4 flex items-center animate-author">
+      
+      <span class="text-white text-sm">par Immobilier Calvino</span>
+    </div>
+  </div>
+
+  <style>
+    .animate-title {
+      opacity: 0;
+      animation: fadeSlideDown 1s ease-out forwards;
+    }
+    
+    .animate-title-blue {
+      opacity: 0;
+      animation: fadeSlideUp 1s ease-out 0.3s forwards;
+    }
+    
+    .animate-gauge {
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.6s forwards;
+    }
+    
+    .animate-needle {
+      transform: translateX(-50%) rotate(-45deg);
+      animation: needleSwing 5s ease-in-out infinite;
+    }
+    
+    .animate-text {
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.9s forwards;
+    }
+    
+    .animate-author {
+      opacity: 0;
+      animation: fadeIn 1s ease-out 1.2s forwards;
+    }
+    
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes needleSwing {
+      0% { transform: translateX(-50%) rotate(-45deg); }
+      25% { transform: translateX(-50%) rotate(45deg); }
+      50% { transform: translateX(-50%) rotate(0deg); }
+      75% { transform: translateX(-50%) rotate(30deg); }
+      100% { transform: translateX(-50%) rotate(-45deg); }
+    }
+  </style>
+</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-3 -right-3 w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center transform rotate-12 shadow-xl">
+                    <div class="text-center leading-tight">
+                        <span class="block text-xs font-bold">Formation</span>
+                        <span class="block text-lg font-black">2025</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <a href="#public" class="text-white flex flex-col items-center animate-bounce">
+                    <span class="mb-2 text-sm">Découvrir plus</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="public" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 text-sm font-semibold mb-4 border border-blue-700/30 fade-in">Prérequis &amp; Public cible</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">À qui s'adresse cette formation ?</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">Notre formation est spécialement conçue pour les professionnels de l'immobilier souhaitant accélérer leurs ventes grâce à une meilleure stratégie de prospection.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 card-hover card-shine fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-user-tie text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Pro de l'immobilier</h3>
+                    <p class="text-gray-400 text-center">Agents immobiliers, mandataires ou négociateurs avec une expérience terrain.</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 card-hover card-shine fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-laptop text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Équipement digital</h3>
+                    <p class="text-gray-400 text-center">Disposer d'un ordinateur ou d'une tablette pour les sessions pratiques.</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 card-hover card-shine fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-folder-open text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Portefeuille de mandats</h3>
+                    <p class="text-gray-400 text-center">Avoir des mandats actifs pour appliquer les techniques directement.</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 card-hover card-shine fade-in">
+                    <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-globe text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Navigation web</h3>
+                    <p class="text-gray-400 text-center">Connaissances de base pour utiliser internet et les outils en ligne.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 p-6 bg-blue-900/20 rounded-xl border border-blue-800/30 fade-in">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-4">Cette formation est-elle faite pour moi ?</h3>
+                        <p class="text-gray-300 mb-6">Répondez à notre quiz rapide pour savoir si cette formation correspond à vos besoins et objectifs professionnels.</p>
+                        <a href="#quiz" class="inline-block px-6 py-3 bg-white text-blue-900 font-bold rounded-lg hover:bg-blue-100 transition">Faire le quiz <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                    <div class="w-full md:w-1/3">
+                        <img src="https://fakeimg.pl/400x300/0A1929/ffffff?text=Quiz" alt="Quiz" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="objectifs" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_30%,rgba(255,215,0,0.1),transparent_70%)]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-yellow-900/30 text-yellow-300 text-sm font-semibold mb-4 border border-yellow-700/30 fade-in">Compétences acquises</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">Objectifs de la formation</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">À l'issue de cette formation, vous disposerez de compétences concrètes pour transformer votre approche commerciale.</p>
+            </div>
+            
+            <div class="relative">
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-yellow-500 transform -translate-x-1/2"></div>
+                
+                <div class="space-y-20 relative">
+    <!-- Ligne de progression verticale -->
+    <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-700 z-0 hidden md:block transform -translate-x-1/2">
+        <div class="timeline-progress absolute top-0 w-full bg-gradient-to-b from-blue-500 to-blue-700" style="height: 0%;"></div>
+    </div>
+    
+    <div class="flex flex-col md:flex-row items-center fade-in timeline-item">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-right order-2 md:order-1">
+            <span class="inline-block text-sm text-yellow-400 font-semibold mb-2">Objectif 1</span>
+            <h3 class="text-2xl font-bold mb-4">Revaloriser les invendus</h3>
+            <p class="text-gray-400">Apprenez à analyser et repositionner vos biens immobiliers qui stagnent sur le marché en utilisant des outils d'évaluation précis.</p>
+        </div>
+        <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10 order-1 md:order-2 timeline-icon">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <i class="fas fa-chart-line text-2xl text-white"></i>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 order-3"></div>
+    </div>
+                    
+    <div class="flex flex-col md:flex-row items-center fade-in timeline-item">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-right order-2 md:order-3"></div>
+        <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10 order-1 md:order-2 timeline-icon">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <i class="fas fa-search-location text-2xl text-white"></i>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 order-3 md:order-1">
+            <span class="inline-block text-sm text-yellow-400 font-semibold mb-2">Objectif 2</span>
+            <h3 class="text-2xl font-bold mb-4">Analyser le marché</h3>
+            <p class="text-gray-400">Maîtrisez les techniques d'analyse comparative du marché immobilier local pour mieux conseiller vos clients et positionner vos offres.</p>
+        </div>
+    </div>
+                    
+    <div class="flex flex-col md:flex-row items-center fade-in timeline-item">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-right order-2 md:order-1">
+            <span class="inline-block text-sm text-yellow-400 font-semibold mb-2">Objectif 3</span>
+            <h3 class="text-2xl font-bold mb-4">Maîtriser Cadastre.com</h3>
+            <p class="text-gray-400">Découvrez toutes les fonctionnalités de Cadastre.com et de l'Immomètre pour générer des estimations précises et convaincantes.</p>
+        </div>
+        <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10 order-1 md:order-2 timeline-icon">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <i class="fas fa-tools text-2xl text-white"></i>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 order-3"></div>
+    </div>
+                    
+    <div class="flex flex-col md:flex-row items-center fade-in timeline-item">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-right order-2 md:order-3"></div>
+        <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10 order-1 md:order-2 timeline-icon">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <i class="fas fa-user-check text-2xl text-white"></i>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 order-3 md:order-1">
+            <span class="inline-block text-sm text-yellow-400 font-semibold mb-2">Objectif 4</span>
+            <h3 class="text-2xl font-bold mb-4">Devenir référent local</h3>
+            <p class="text-gray-400">Développez votre statut d'expert immobilier sur votre zone grâce à une sectorisation efficace et une connaissance approfondie du marché.</p>
+        </div>
+    </div>
+                    
+    <div class="flex flex-col md:flex-row items-center fade-in timeline-item">
+        <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12 text-right order-2 md:order-1">
+            <span class="inline-block text-sm text-yellow-400 font-semibold mb-2">Objectif 5</span>
+            <h3 class="text-2xl font-bold mb-4">Carte de prospection</h3>
+            <p class="text-gray-400">Créez une carte de prospection personnalisée et efficace pour cibler les secteurs à fort potentiel et optimiser vos démarches commerciales.</p>
+        </div>
+        <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10 order-1 md:order-2 timeline-icon">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center shadow-lg">
+                <i class="fas fa-map-marked-alt text-2xl text-white"></i>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 md:pl-12 order-3"></div>
+    </div>
+
+    <style>
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-icon {
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-icon.active div {
+            animation: pulse 2s infinite;
+        }
+        
+        .timeline-progress {
+            transition: height 1.2s ease-out;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineIcons = document.querySelectorAll('.timeline-icon');
+            const progressLine = document.querySelector('.timeline-progress');
+            
+            function checkProgress() {
+                let progress = 0;
+                let activeItems = 0;
+                
+                timelineItems.forEach((item, index) => {
+                    const rect = item.getBoundingClientRect();
+                    const isVisible = (
+                        rect.top <= window.innerHeight * 0.8 &&
+                        rect.bottom >= 0
+                    );
+                    
+                    if (isVisible) {
+                        item.classList.add('active');
+                        timelineIcons[index].classList.add('active');
+                        activeItems = index + 1;
+                    }
+                });
+                
+                progress = (activeItems / timelineItems.length) * 100;
+                progressLine.style.height = `${progress}%`;
+            }
+            
+            // Initial check
+            setTimeout(checkProgress, 300);
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkProgress);
+            
+            // Trigger first item animation automatically
+            setTimeout(() => {
+                if (timelineItems[0]) {
+                    timelineItems[0].classList.add('active');
+                    timelineIcons[0].classList.add('active');
+                    progressLine.style.height = '20%';
+                }
+            }, 500);
+        });
+    </script>
+</div>
+                
+                <div class="mt-20 text-center fade-in">
+                    <a href="#modules" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg shadow-lg hover:shadow-blue-500/50 transition transform hover:scale-105">
+                        Découvrir le programme détaillé
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 text-sm font-semibold mb-4 border border-blue-700/30 fade-in">Programme complet</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">Modules détaillés</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">Une formation intensive répartie sur deux journées complètes, avec une approche pratique et concrète.</p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-xl fade-in">
+                    <div class="accordion-header cursor-pointer p-6 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center mr-4">
+                                <i class="fas fa-calculator text-xl text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Module 1 : Revaloriser ses invendus</h3>
+                                <p class="text-gray-400">Journée complète (7 heures)</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down text-xl text-gray-400 transition-transform accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content bg-gray-800/50 border-t border-gray-700">
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">1</span>
+                                        Tour de table
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Présentation des participants</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Identification des difficultés</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Définition des objectifs individuels</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">2</span>
+                                        Économie &amp; Marché
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Analyse des tendances actuelles</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Impact des taux d'intérêt</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Comprendre la valorisation des biens</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">3</span>
+                                        Utilisation de l'Immomètre
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Prise en main de l'outil</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Évaluation précise des biens</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Création de rapports convaincants</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 p-5 bg-blue-900/20 rounded-lg">
+                                <h4 class="font-bold text-lg mb-3">Exercices pratiques</h4>
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <div class="flex-1">
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Analyse de cas réels issus du portefeuille des participants</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Simulation de présentation client</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="flex-1">
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Création d'un rapport d'évaluation complet</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Stratégie de repositionnement d'un bien</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-xl fade-in">
+                    <div class="accordion-header cursor-pointer p-6 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marked text-xl text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Module 2 : Sectorisation &amp; Prospection</h3>
+                                <p class="text-gray-400">Journée complète (7 heures)</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-down text-xl text-gray-400 transition-transform accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content bg-gray-800/50 border-t border-gray-700">
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">1</span>
+                                        Analyse carte de prospection
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Définition des zones à potentiel</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Évaluation densité/opportunité</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Analyse concurrentielle locale</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">2</span>
+                                        Méthodologie par étapes
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Découpage territorial efficace</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Qualification des zones</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Planification des actions</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-800 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg mb-3 flex items-center">
+                                        <span class="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center mr-2 text-sm">3</span>
+                                        Mise en pratique
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Utilisation de Cadastre.com</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Création de votre secteur</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-xs text-blue-400 mt-1.5 mr-2"></i>
+                                            <span>Exploitation des données</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 p-5 bg-blue-900/20 rounded-lg">
+                                <h4 class="font-bold text-lg mb-3">Exercices pratiques</h4>
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <div class="flex-1">
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Création d'une carte de prospection sur votre secteur</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Élaboration d'un plan d'action à 3 mois</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="flex-1">
+                                        <ul class="space-y-2 text-gray-300">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Simulation d'approche propriétaire</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                                                <span>Préparation d'arguments sectoriels</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center fade-in">
+                <div class="inline-block p-8 bg-blue-900/20 rounded-xl border border-blue-800/30">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center">
+                            <i class="fas fa-certificate text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Certification incluse</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">À l'issue de la formation, recevez une certification officielle attestant de vos nouvelles compétences.</p>
+                    <p class="text-sm text-gray-400">Formation éligible aux financements OPCO et plans de formation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="accompagnement" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_70%,rgba(0,96,255,0.1),transparent_70%)]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 text-sm font-semibold mb-4 border border-blue-700/30 fade-in">Après la formation</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">Accompagnement continu</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">Notre engagement ne s'arrête pas à la fin de la formation. Nous vous accompagnons pour une mise en application réussie.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 fade-in">
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
+                        <h3 class="text-2xl font-bold mb-6">Communauté d'entraide exclusive</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-2xl text-green-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1 text-blue-300">Groupe WhatsApp dédié</h4>
+                                    <p class="text-gray-400">Rejoignez un groupe exclusif avec tous les participants et le formateur pour partager vos réussites et poser vos questions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-video text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1 text-blue-300">Sessions de suivi en visio</h4>
+                                    <p class="text-gray-400">Participez à deux sessions collectives de suivi à 15 et 30 jours après la formation pour partager vos avancées.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-file-alt text-2xl text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1 text-blue-300">Ressources exclusives</h4>
+                                    <p class="text-gray-400">Accédez à une bibliothèque de modèles, tutoriels et fiches pratiques régulièrement mises à jour.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-user-tie text-2xl text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1 text-blue-300">Coaching individuel</h4>
+                                    <p class="text-gray-400">Bénéficiez d'un appel individuel de 30 minutes avec le formateur pour aborder vos défis spécifiques.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 relative fade-in">
+                    <div class="relative mx-auto w-full max-w-xs">
+                        <div class="rounded-[40px] bg-gray-800 border-4 border-gray-700 p-2 shadow-2xl">
+    <div class="relative rounded-[32px] overflow-hidden bg-gray-200 aspect-[9/19]">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-7 bg-gray-800 rounded-b-xl z-10"></div>
+        
+        <div class="bg-[#101D25] h-full w-full overflow-hidden">
+            <div class="bg-[#1F2C34] p-3">
+                <div class="flex items-center">
+                    <div class="text-white font-bold">Formation Cadastre</div>
+                    <div class="ml-auto flex space-x-3">
+                        <i class="fas fa-video text-gray-400"></i>
+                        <i class="fas fa-phone text-gray-400"></i>
+                        <i class="fas fa-ellipsis-v text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="chat-container" class="p-3 space-y-3">
+                <div class="chat-message opacity-0 bg-[#0B141A] p-2 rounded-lg max-w-[70%] text-xs" data-delay="1000">
+                    <div class="text-white">Bonjour à tous ! Comment avancent vos cartes de prospection ?</div>
+                    <div class="text-right text-[10px] text-gray-500">11:42</div>
+                </div>
+                
+                <div id="typing-indicator-1" class="typing-indicator opacity-0 bg-[#025C4B] p-2 rounded-lg max-w-[12%] ml-auto text-xs hidden">
+                    <div class="flex space-x-1">
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <div class="chat-message opacity-0 bg-[#025C4B] p-2 rounded-lg max-w-[70%] ml-auto text-xs" data-delay="4000">
+                    <div class="text-white">J'ai déjà identifié 3 secteurs à fort potentiel !</div>
+                    <div class="text-right text-[10px] text-gray-300">11:45</div>
+                </div>
+                
+                <div id="typing-indicator-2" class="typing-indicator opacity-0 bg-[#0B141A] p-2 rounded-lg max-w-[12%] text-xs hidden">
+                    <div class="flex space-x-1">
+                        <div class="typing-dot bg-gray-400 h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-gray-400 h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-gray-400 h-2 w-2 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <div class="chat-message opacity-0 bg-[#0B141A] p-2 rounded-lg max-w-[70%] text-xs" data-delay="7000">
+                    <div class="text-white">Super Sophie ! N'oubliez pas d'utiliser la méthode des cercles concentriques que nous avons vue.</div>
+                    <div class="text-right text-[10px] text-gray-500">11:47</div>
+                </div>
+                
+                <div id="typing-indicator-3" class="typing-indicator opacity-0 bg-[#025C4B] p-2 rounded-lg max-w-[12%] ml-auto text-xs hidden">
+                    <div class="flex space-x-1">
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                        <div class="typing-dot bg-white h-2 w-2 rounded-full"></div>
+                    </div>
+                </div>
+                
+                <div class="chat-message opacity-0 bg-[#025C4B] p-2 rounded-lg max-w-[70%] ml-auto text-xs" data-delay="10000">
+                    <div class="text-white">J'ai une question sur l'Immomètre pour l'estimation d'un appartement atypique...</div>
+                    <div class="text-right text-[10px] text-gray-300">11:52</div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-0 left-0 right-0 bg-[#1F2C34] p-2 flex items-center">
+                <div class="bg-[#2A3942] rounded-full w-full h-8 flex items-center px-3">
+                    <span class="text-gray-400 text-xs">Message</span>
+                </div>
+                <div class="ml-2 w-8 h-8 bg-[#00A884] rounded-full flex items-center justify-center">
+                    <i class="fas fa-microphone text-white text-sm"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes typingAnimation {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .typing-dot:nth-child(1) { animation: typingAnimation 1s infinite 0s; }
+        .typing-dot:nth-child(2) { animation: typingAnimation 1s infinite 0.2s; }
+        .typing-dot:nth-child(3) { animation: typingAnimation 1s infinite 0.4s; }
+        
+        .chat-message.animated, .typing-indicator.animated {
+            animation: fadeIn 0.5s forwards;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            startChatAnimation();
+            
+            // Redémarrer l'animation toutes les 16 secondes
+            setInterval(startChatAnimation, 16000);
+        });
+        
+        function startChatAnimation() {
+            const chatMessages = document.querySelectorAll('.chat-message');
+            
+            // Réinitialiser tous les messages et indicateurs
+            document.querySelectorAll('.chat-message, .typing-indicator').forEach(el => {
+                el.classList.remove('animated');
+                el.classList.add('opacity-0');
+                if (el.classList.contains('typing-indicator')) {
+                    el.classList.add('hidden');
+                }
+            });
+            
+            // Animer les messages un par un avec les indicateurs de frappe
+            setTimeout(() => {
+                animateMessage(0);
+                
+                setTimeout(() => {
+                    showTypingIndicator(1);
+                    setTimeout(() => {
+                        animateMessage(1);
+                        
+                        setTimeout(() => {
+                            showTypingIndicator(2);
+                            setTimeout(() => {
+                                animateMessage(2);
+                                
+                                setTimeout(() => {
+                                    showTypingIndicator(3);
+                                    setTimeout(() => {
+                                        animateMessage(3);
+                                    }, 2000);
+                                }, 1000);
+                            }, 2000);
+                        }, 1000);
+                    }, 2000);
+                }, 1000);
+            }, 1000);
+        }
+        
+        function animateMessage(index) {
+            const chatMessages = document.querySelectorAll('.chat-message');
+            if (chatMessages[index]) {
+                chatMessages[index].classList.add('animated');
+            }
+        }
+        
+        function showTypingIndicator(index) {
+            const indicator = document.getElementById(`typing-indicator-${index}`);
+            if (indicator) {
+                indicator.classList.remove('hidden');
+                indicator.classList.add('animated');
+                
+                setTimeout(() => {
+                    indicator.classList.add('hidden');
+                    indicator.classList.remove('animated');
+                }, 1800);
+            }
+        }
+    </script>
+</div>
+                        
+                        <div class="absolute -top-6 -right-6 bg-blue-600 rounded-full px-3 py-1 text-xs font-bold text-white flex items-center animate-pulse">
+                            <i class="fas fa-bell mr-1"></i> 12 nouveaux
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 bg-green-600 rounded-full px-3 py-1 text-xs font-bold text-white flex items-center">
+                            <i class="fas fa-check-circle mr-1"></i> Suivi 7j/7
+                        </div>
+                    </div>
+                    
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-[100px]"></div>
+                </div>
+            </div>
+            
+            <div class="mt-20 bg-blue-900/20 rounded-xl p-6 border border-blue-800/30 fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">30</div>
+                        <p class="text-gray-300">Jours de suivi inclus</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">2</div>
+                        <p class="text-gray-300">Sessions de suivi collectif</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">1</div>
+                        <p class="text-gray-300">Coaching individuel</p>
+                    </div>
+                    
+                    <div class="p-4">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                        <p class="text-gray-300">Accès aux ressources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-yellow-900/30 text-yellow-300 text-sm font-semibold mb-4 border border-yellow-700/30 fade-in">Investissement</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">Tarifs &amp; Financement</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">Une formation intégralement finançable par vos organismes de formation professionnelle.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 card-hover fade-in">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Indépendant / Libéral</h3>
+                                <p class="text-gray-400">Idéal pour agents indépendants</p>
+                            </div>
+                            <div class="w-16 h-16 rounded-full bg-yellow-900/30 flex items-center justify-center">
+                                <i class="fas fa-user text-2xl text-yellow-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="text-gray-400 text-lg line-through">1500€</div>
+                            <div class="flex items-end">
+                                <div class="text-4xl font-bold">0€</div>
+                                <div class="text-gray-400 ml-2">reste à charge</div>
+                            </div>
+                            <div class="text-green-400 font-semibold mt-2">Prise en charge AGEFICE, FIFPL, OPCO</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Formation complète (14h)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Documentation et ressources</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Accès au groupe WhatsApp</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Sessions de suivi collectif</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>1 séance de coaching individuel</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="p-4 bg-black bg-opacity-30 rounded-lg mb-6">
+                            <h4 class="font-bold mb-2">Comment faire financer ?</h4>
+                            <p class="text-sm text-gray-400">Nous vous accompagnons dans toutes vos démarches administratives pour obtenir une prise en charge à 100%.</p>
+                        </div>
+                        
+                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
+                            Réserver ma place
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-xl border border-gray-700 transition-all duration-300 card-hover fade-in">
+                    <div class="absolute top-0 right-6 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        Formation en agence
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Agence immobilière</h3>
+                                <p class="text-gray-400">Pour équipes de 5 à 20 personnes</p>
+                            </div>
+                            <div class="w-16 h-16 rounded-full bg-blue-900/30 flex items-center justify-center">
+                                <i class="fas fa-building text-2xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-end">
+                                <div class="text-4xl font-bold">1500€</div>
+                                <div class="text-gray-400 ml-2">/jour</div>
+                            </div>
+                            <div class="text-gray-400 mt-2">+ frais de déplacement</div>
+                            <div class="text-blue-400 font-semibold mt-2">Formation personnalisée en agence</div>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Formation sur site (14h)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Personnalisation du contenu</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Documentation et ressources</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Groupe WhatsApp dédié à l'agence</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+                                <span>Suivi spécifique post-formation</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="p-4 bg-black bg-opacity-30 rounded-lg mb-6">
+                            <h4 class="font-bold mb-2">Demande de devis</h4>
+                            <p class="text-sm text-gray-400">Contactez-nous pour un devis personnalisé en fonction de la taille de votre équipe et de vos besoins spécifiques.</p>
+                        </div>
+                        
+                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-to-r from-blue-900/20 to-yellow-900/20 rounded-xl p-8 border border-gray-700 fade-in">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/4 text-center mb-6 md:mb-0">
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-r from-blue-600 to-yellow-500 flex items-center justify-center mx-auto">
+                            <i class="fas fa-percentage text-4xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/4 md:pl-8">
+                        <h3 class="text-2xl font-bold mb-4">Financement à 100%</h3>
+                        <p class="text-gray-300 mb-4">Notre formation est éligible à une prise en charge intégrale par votre organisme de financement (OPCO). En tant qu'organisme certifié Qualiopi, nous vous accompagnons dans toutes les démarches administratives.</p>
+                        <div class="flex flex-wrap gap-4 logo-container">
+    <div class="bg-white rounded px-4 py-2 logo-item">
+        <img src="https://fakeimg.pl/120x50/ffffff/000000?text=AGEFICE&amp;font=bold" alt="AGEFICE" class="h-12 logo-image">
+        <div class="text-center font-semibold mt-2">AGEFICE</div>
+    </div>
+    <div class="bg-white rounded px-4 py-2 logo-item">
+        <img src="https://fakeimg.pl/120x50/ffffff/000000?text=FIF-PL&amp;font=bold" alt="FIF-PL" class="h-12 logo-image">
+        <div class="text-center font-semibold mt-2">FIF-PL</div>
+    </div>
+    <div class="bg-white rounded px-4 py-2 logo-item">
+        <img src="https://fakeimg.pl/120x50/ffffff/000000?text=OPCO-EP&amp;font=bold" alt="OPCO-EP" class="h-12 logo-image">
+        <div class="text-center font-semibold mt-2">OPCO-EP</div>
+    </div>
+    <div class="bg-white rounded px-4 py-2 logo-item">
+        <img src="https://fakeimg.pl/120x50/ffffff/000000?text=Qualiopi&amp;font=bold" alt="Qualiopi" class="h-12 logo-image">
+        <div class="text-center font-semibold mt-2">Qualiopi</div>
+    </div>
+    <style>
+        .logo-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        
+        .logo-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.8s ease-out backwards;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .logo-item:nth-child(1) { animation-delay: 0.1s; }
+        .logo-item:nth-child(2) { animation-delay: 0.3s; }
+        .logo-item:nth-child(3) { animation-delay: 0.5s; }
+        .logo-item:nth-child(4) { animation-delay: 0.7s; }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .logo-image {
+            transition: transform 0.3s ease;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .logo-item:hover .logo-image {
+            transform: scale(1.1);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 1s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+            }
+            
+            .logo-item {
+                min-width: 120px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoItems = document.querySelectorAll('.logo-item');
+            
+            // Animation périodique aléatoire
+            setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * logoItems.length);
+                logoItems[randomIndex].classList.add('pulse-animation');
+                setTimeout(() => {
+                    logoItems[randomIndex].classList.remove('pulse-animation');
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(255,215,0,0.1),transparent_70%)]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-900/30 text-blue-300 text-sm font-semibold mb-4 border border-blue-700/30 fade-in">Inscrivez-vous</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text fade-in">Réservez votre place</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in">Places limitées à 20 participants maximum par session pour garantir un suivi personnalisé.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="order-2 md:order-1 fade-in">
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl border border-gray-700">
+                        <h3 class="text-2xl font-bold mb-6">Formulaire de contact</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nom" class="block text-sm font-medium text-gray-300 mb-1">Nom*</label>
+                                    <input type="text" id="nom" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="">
+                                </div>
+                                <div>
+                                    <label for="prenom" class="block text-sm font-medium text-gray-300 mb-1">Prénom*</label>
+                                    <input type="text" id="prenom" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email*</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="">
+                                </div>
+                                <div>
+                                    <label for="telephone" class="block text-sm font-medium text-gray-300 mb-1">Téléphone*</label>
+                                    <input type="tel" id="telephone" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="societe" class="block text-sm font-medium text-gray-300 mb-1">Société/Agence</label>
+                                <input type="text" id="societe" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="financement" class="w-4 h-4 bg-gray-700 rounded border-gray-600 text-blue-600 focus:ring-blue-500">
+                                <label for="financement" class="ml-2 text-sm text-gray-300">Je souhaite des informations sur le financement</label>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
+                                    Envoyer ma demande
+                                </button>
+                            </div>
+                        </form>
+                    </div><div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl border border-gray-700 mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Informations de contact</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-user text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Christophe Calvino</h4>
+                                    <p class="text-gray-400">Formateur</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Téléphone</h4>
+                                    <p class="text-gray-400">06 72 16 30 10</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Email</h4>
+                                    <p class="text-gray-400">christophe.calvino@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 fade-in">
+                    
+                    
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl border border-gray-700">
+    <h3 class="text-2xl font-bold mb-6">Prochaines sessions</h3>
+    
+    <div class="space-y-4">
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Paris</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">9 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Marseille</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">15 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Lyon</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">12 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Toulouse</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">8 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Nice</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">10 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Nantes</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">14 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Bordeaux</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">11 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Lille</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">7 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <div class="mr-4">
+                <div class="w-16 h-16 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center text-center">
+                    <span class="text-xl font-bold">Strasbourg</span>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold">Session formation</h4>
+                <p class="text-sm text-gray-400">13 places restantes</p>
+            </div>
+            <div class="ml-auto">
+                <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">Disponible</span>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div><div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-6xl mx-auto my-8">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-blue-600 to-indigo-800 px-6 py-8 text-white">
+        <h1 class="text-3xl font-bold mb-2">Financement</h1>
+        <p class="text-lg opacity-90">Demande de prise en charge – Étapes à suivre</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="border-b">
+        <div class="flex">
+            <button class="px-6 py-4 border-b-2 border-blue-600 text-blue-600 font-semibold flex items-center">
+                <span class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-2">1</span>
+                Mandataire indépendant(e)
+                <span class="ml-2 text-xs text-gray-500">(EIRL, EI, AE...)</span>
+            </button>
+            <button class="px-6 py-4 text-gray-500 hover:text-gray-700 transition-colors flex items-center">
+                <span class="bg-gray-300 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center mr-2">2</span>
+                Mandataire en portage salarial
+            </button>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="p-6 md:p-8 lg:p-10 bg-gray-900 text-gray-200">
+    <!-- Timeline -->
+    <div class="relative">
+        <!-- Progress Bar -->
+        <div class="absolute left-8 top-0 bottom-0 w-1 bg-gray-700 z-0"></div>
+        
+        <!-- Step 1 -->
+        <div class="relative z-10 mb-12 transition-all duration-300 hover:translate-x-2 timeline-item opacity-0">
+            <div class="flex">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="bg-indigo-800 rounded-full w-16 h-16 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 pulse-animation">
+                        <i class="fa fa-pencil-alt text-xl"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 flex-grow border-l-4 border-indigo-600 transform transition-all">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Étape 1 : Pré-inscription à la formation</h3>
+                    <p class="text-gray-400 mb-4">Complétez le formulaire de pré-inscription en ligne.</p>
+                    <a href="#" class="bg-indigo-700 text-white px-6 py-3 rounded-lg inline-flex items-center hover:bg-indigo-600 transition-colors font-medium transform hover:scale-105 transition-transform">
+                        <i class="fa fa-file-alt mr-2"></i> Formulaire Digiforma
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative z-10 mb-12 transition-all duration-300 hover:translate-x-2 timeline-item opacity-0">
+            <div class="flex">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="bg-indigo-800 rounded-full w-16 h-16 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 pulse-animation">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 flex-grow border-l-4 border-indigo-600 transform transition-all">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Étape 2 : Envoyez les documents par email</h3>
+                    <p class="text-gray-400 mb-4">Une fois pré-inscrit·e, envoyez les pièces suivantes à :</p>
+                    <div class="bg-gray-700 p-3 rounded-lg mb-5 inline-block hover:bg-gray-600 transition-colors">
+                        <a href="mailto:gaelle.gill@axeetformation.fr" class="text-indigo-300 font-medium"><i class="fa fa-envelope-open mr-2"></i>gaelle.gill@axeetformation.fr</a>
+                    </div>
+                    
+                    <div class="space-y-4 mt-4">
+                        <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 flex items-start hover:bg-gray-650 transition-colors transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="bg-indigo-900 text-indigo-300 p-3 rounded-lg mr-4">
+                                <i class="fa fa-file-invoice text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-200">Attestation de versement CFP</h4>
+                                <p class="text-gray-400 text-sm mt-1">À télécharger depuis votre extranet URSSAF</p>
+                                
+                                <div class="mt-3 pl-4 border-l-2 border-indigo-700 text-sm">
+                                    <p class="text-gray-400 mb-1">Connectez-vous à votre espace personnel sur www.urssaf.fr</p>
+                                    <p class="text-gray-400 mb-1">Allez dans la section « Mes documents »</p>
+                                    <p class="text-gray-400 mb-1">Choisissez « Attestation de contribution à la formation professionnelle »</p>
+                                    <p class="text-gray-400">Cliquez sur Télécharger</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 flex items-start hover:bg-gray-650 transition-colors transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="bg-indigo-900 text-indigo-300 p-3 rounded-lg mr-4">
+                                <i class="fa fa-id-card text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-200">Copie de votre Carte Nationale d'Identité (CNI)</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-700 p-4 rounded-lg border border-gray-600 flex items-start hover:bg-gray-650 transition-colors transform hover:scale-[1.01] transition-transform duration-300">
+                            <div class="bg-indigo-900 text-indigo-300 p-3 rounded-lg mr-4">
+                                <i class="fa fa-university text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-200">Relevé d'Identité Bancaire (RIB)</h4>
+                                <p class="text-gray-400 text-sm mt-1">Celui sur lequel vous souhaitez recevoir le remboursement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative z-10 mb-12 transition-all duration-300 hover:translate-x-2 timeline-item opacity-0">
+            <div class="flex">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="bg-indigo-800 rounded-full w-16 h-16 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 pulse-animation">
+                        <i class="fa fa-folder-open text-xl"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 flex-grow border-l-4 border-indigo-600 transform transition-all">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Étape 3 : Création de votre dossier</h3>
+                    <p class="text-gray-400 mb-4">Nous préparons votre dossier de financement.</p>
+                    
+                    <div class="mt-3 bg-gray-700 p-4 rounded-lg">
+                        <p class="text-gray-300 mb-2">Dès réception des documents, nous préparons pour vous :</p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 pl-2">
+                            <li>Le formulaire officiel de demande de prise en charge</li>
+                            <li>La convention de formation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative z-10 transition-all duration-300 hover:translate-x-2 timeline-item opacity-0">
+            <div class="flex">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="bg-indigo-800 rounded-full w-16 h-16 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 pulse-animation">
+                        <i class="fa fa-signature text-xl"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-xl p-6 flex-grow border-l-4 border-indigo-600 transform transition-all">
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">Étape 4 : Signature et envoi du dossier</h3>
+                    <p class="text-gray-400 mb-4">Nous vous recontactons pour la signature des documents finaux.</p>
+                    
+                    <div class="mt-3 bg-gray-700 p-4 rounded-lg">
+                        <p class="text-gray-300 mb-2">Nous vous recontacterons individuellement pour la signature des documents.</p>
+                        <p class="text-gray-300">Ensuite, nous nous chargerons de l'envoi du dossier complet à votre Fonds de Formation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Meter -->
+    <div class="mt-12 max-w-xl mx-auto opacity-0" id="progress-container">
+        <h4 class="text-gray-300 mb-2 font-medium">Progression du processus</h4>
+        <div class="w-full bg-gray-700 rounded-full h-4 mb-1">
+            <div class="w-0 h-4 bg-indigo-600 rounded-full progress-animate" id="progress-bar"></div>
+        </div>
+        <p class="text-gray-500 text-sm" id="progress-text">0%</p>
+    </div>
+
+    <!-- Important Note -->
+    <div class="mt-8 p-5 bg-yellow-900 border border-yellow-700 rounded-lg flex opacity-0" id="note-container">
+        <div class="flex-shrink-0 mr-4 text-yellow-500">
+            <i class="fa fa-thumbtack text-2xl animate-bounce"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-yellow-400 mb-1">Remarque importante :</h4>
+            <p class="text-yellow-300">Il est important de respecter l'ordre des étapes pour que votre dossier soit traité dans les meilleurs délais. En cas de doute ou de question sur la procédure, n'hésitez pas à nous contacter directement.</p>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .progress-animate {
+            transition: width 2s ease-in-out;
+        }
+    </style>
+
+    <script>
+        // Animation d'apparition progressive des éléments
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const progressContainer = document.getElementById('progress-container');
+            const noteContainer = document.getElementById('note-container');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            // Fonction pour animer les éléments au chargement
+            function animateOnLoad() {
+                // Animer les éléments de la timeline
+                timelineItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.animation = 'fadeUp 0.6s forwards';
+                    }, 300 * index);
+                });
+                
+                // Animer le conteneur de progression
+                setTimeout(() => {
+                    progressContainer.style.opacity = '1';
+                    progressContainer.style.animation = 'fadeUp 0.6s forwards';
+                    
+                    // Animation de la barre de progression
+                    setTimeout(() => {
+                        const randomProgress = Math.floor(Math.random() * 60) + 20;
+                        progressBar.style.width = randomProgress + '%';
+                        progressText.textContent = randomProgress + '%';
+                    }, 500);
+                }, (timelineItems.length * 300) + 100);
+                
+                // Animer la note importante
+                setTimeout(() => {
+                    noteContainer.style.opacity = '1';
+                    noteContainer.style.animation = 'fadeUp 0.6s forwards';
+                }, (timelineItems.length * 300) + 300);
+            }
+            
+            // Lancer l'animation
+            animateOnLoad();
+        });
+    </script>
+</div>
+</div>
+
+<script>
+    // Animation du graphique de progression
+    setTimeout(() => {
+        const progressBar = document.getElementById('progress-bar');
+        progressBar.style.transition = 'width 1s ease-in-out';
+        progressBar.style.width = '0%';
+    }, 500);
+</script>
+            
+            <div class="mt-20 border-t border-gray-800 pt-12 text-center fade-in">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold gradient-text mb-2">Formation Cadastre.com</h3>
+                        <p class="text-gray-400">Propulsez votre carrière immobilière au niveau supérieur</p>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-900 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-sm text-gray-500">
+                    © 2025 Immobilier Calvino - Formation Cadastre.com | Tous droits réservés
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-800 rounded-xl p-6 max-w-lg w-full mx-4 shadow-2xl border border-gray-700">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Cette formation est-elle faite pour moi ?</h3>
+                <button id="closeQuiz" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="quizContainer">
+                <div class="quiz-question active">
+                    <p class="mb-4 text-lg">1. Utilisez-vous déjà Cadastre.com dans votre activité ?</p>
+                    <div class="space-y-3">
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="1">Jamais utilisé</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="2">Occasionnellement</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="3">Régulièrement mais sans maîtriser toutes les fonctionnalités</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="4">Expert, je forme déjà mes collègues</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-question hidden">
+                    <p class="mb-4 text-lg">2. Combien de mandats invendus avez-vous actuellement ?</p>
+                    <div class="space-y-3">
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="1">Aucun</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="3">1 à 5</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="4">6 à 15</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="3">Plus de 15</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-question hidden">
+                    <p class="mb-4 text-lg">3. Quelle est votre principal objectif professionnel actuellement ?</p>
+                    <div class="space-y-3">
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="4">Vendre mes mandats actuels plus rapidement</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="4">Développer ma prospection</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="3">Devenir expert sur un secteur</button>
+                        <button class="quiz-answer w-full text-left p-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition" data-score="2">Changer d'orientation professionnelle</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-result hidden">
+                    <div id="highScore" class="hidden">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-green-900/30 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-check-circle text-4xl text-green-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Cette formation est parfaite pour vous !</h4>
+                            <p class="text-gray-300">Votre profil correspond exactement à celui des agents qui tirent le maximum de bénéfices de cette formation.</p>
+                        </div>
+                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-green-600 to-green-700 text-center text-white font-bold rounded-lg transition" id="closeQuizResult">
+                            Réserver ma place maintenant
+                        </a>
+                    </div>
+                    
+                    <div id="mediumScore" class="hidden">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-yellow-900/30 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-star-half-alt text-4xl text-yellow-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Cette formation pourrait vous être bénéfique</h4>
+                            <p class="text-gray-300">Vous avez déjà certaines connaissances, mais cette formation vous permettra d'améliorer significativement vos compétences.</p>
+                        </div>
+                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-center text-white font-bold rounded-lg transition" id="closeQuizResult2">
+                            En savoir plus
+                        </a>
+                    </div>
+                    
+                    <div id="lowScore" class="hidden">
+                        <div class="text-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-red-900/30 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-info-circle text-4xl text-red-400"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-2">Contactez-nous pour échanger</h4>
+                            <p class="text-gray-300">D'après vos réponses, une discussion préalable serait utile pour déterminer si cette formation correspond à vos besoins.</p>
+                        </div>
+                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 text-center text-white font-bold rounded-lg transition" id="closeQuizResult3">
+                            Prendre rendez-vous
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.progress-bar').style.width = scrolled + '%';
+            });
+            
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    content.classList.toggle('active');
+                    icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+                });
+            });
+            
+            const startCount = 9;
+            let count = startCount;
+            const placesCounter = document.getElementById('placesCounter');
+            
+            setInterval(() => {
+                if (Math.random() > 0.7 && count > 1) {
+                    count--;
+                    placesCounter.textContent = count;
+                    placesCounter.classList.add('text-red-500');
+                    setTimeout(() => {
+                        placesCounter.classList.remove('text-red-500');
+                    }, 1000);
+                }
+            }, 15000);
+            
+            const quizModal = document.getElementById('quizModal');
+            const closeQuiz = document.getElementById('closeQuiz');
+            const quizQuestions = document.querySelectorAll('.quiz-question');
+            const quizResult = document.querySelector('.quiz-result');
+            const quizAnswers = document.querySelectorAll('.quiz-answer');
+            
+            let currentQuestion = 0;
+            let totalScore = 0;
+            
+            document.querySelectorAll('a[href="#quiz"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    quizModal.classList.remove('hidden');
+                    currentQuestion = 0;
+                    totalScore = 0;
+                    quizQuestions.forEach((q, i) => {
+                        q.classList.toggle('active', i === 0);
+                        q.classList.toggle('hidden', i !== 0);
+                    });
+                    quizResult.classList.add('hidden');
+                });
+            });
+            
+            closeQuiz.addEventListener('click', function() {
+                quizModal.classList.add('hidden');
+            });
+            
+            document.querySelectorAll('#closeQuizResult, #closeQuizResult2, #closeQuizResult3').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    quizModal.classList.add('hidden');
+                });
+            });
+            
+            quizAnswers.forEach(answer => {
+                answer.addEventListener('click', function() {
+                    const score = parseInt(this.getAttribute('data-score'));
+                    totalScore += score;
+                    
+                    quizQuestions[currentQuestion].classList.remove('active');
+                    quizQuestions[currentQuestion].classList.add('hidden');
+                    
+                    currentQuestion++;
+                    
+                    if (currentQuestion < quizQuestions.length) {
+                        quizQuestions[currentQuestion].classList.add('active');
+                        quizQuestions[currentQuestion].classList.remove('hidden');
+                    } else {
+                        quizResult.classList.remove('hidden');
+                        
+                        const avgScore = totalScore / quizQuestions.length;
+                        
+                        if (avgScore >= 3.5) {
+                            document.getElementById('highScore').classList.remove('hidden');
+                            document.getElementById('mediumScore').classList.add('hidden');
+                            document.getElementById('lowScore').classList.add('hidden');
+                        } else if (avgScore >= 2.5) {
+                            document.getElementById('highScore').classList.add('hidden');
+                            document.getElementById('mediumScore').classList.remove('hidden');
+                            document.getElementById('lowScore').classList.add('hidden');
+                        } else {
+                            document.getElementById('highScore').classList.add('hidden');
+                            document.getElementById('mediumScore').classList.add('hidden');
+                            document.getElementById('lowScore').classList.remove('hidden');
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('a[href^="#"]:not([href="#quiz"])').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
