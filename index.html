@@ -1154,7 +1154,7 @@
                             <p class="text-sm text-gray-400">Nous vous accompagnons dans toutes vos démarches administratives pour obtenir une prise en charge à 100%.</p>
                         </div>
                         
-                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
+                        <a href="https://contact-formation-immobiliere.windsurf.build/" class="block w-full py-3 px-4 bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
                             Réserver ma place
                         </a>
                     </div>
@@ -1213,7 +1213,7 @@
                             <p class="text-sm text-gray-400">Contactez-nous pour un devis personnalisé en fonction de la taille de votre équipe et de vos besoins spécifiques.</p>
                         </div>
                         
-                        <a href="#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
+                        <a href="https://contact-formation-immobiliere.windsurf.build/" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-center text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
                             Demander un devis
                         </a>
                     </div>
@@ -1344,63 +1344,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <div class="order-2 md:order-1 fade-in">
-                    <div class="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl shadow-xl border border-gray-700">
-    <h3 class="text-2xl font-bold mb-6 text-white">Formulaire de contact</h3>
-    
-    <form id="contact-form" class="space-y-6" method="post" action="/submit-contact" novalidate="">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label for="nom" class="block text-sm font-medium text-gray-300 mb-1">Nom*</label>
-                <input type="text" id="nom" name="nom" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="" aria-required="true">
-                <div class="text-red-500 text-xs mt-1 hidden error-message" id="nom-error">Veuillez entrer votre nom</div>
-            </div>
-            <div>
-                <label for="prenom" class="block text-sm font-medium text-gray-300 mb-1">Prénom*</label>
-                <input type="text" id="prenom" name="prenom" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="" aria-required="true">
-                <div class="text-red-500 text-xs mt-1 hidden error-message" id="prenom-error">Veuillez entrer votre prénom</div>
-            </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email*</label>
-                <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="" aria-required="true">
-                <div class="text-red-500 text-xs mt-1 hidden error-message" id="email-error">Veuillez entrer une adresse email valide</div>
-            </div>
-            <div>
-                <label for="telephone" class="block text-sm font-medium text-gray-300 mb-1">Téléphone*</label>
-                <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" required="" aria-required="true" pattern="[0-9]{10}">
-                <div class="text-red-500 text-xs mt-1 hidden error-message" id="telephone-error">Veuillez entrer un numéro de téléphone valide</div>
-            </div>
-        </div>
-        
-        <div>
-            <label for="societe" class="block text-sm font-medium text-gray-300 mb-1">Société/Agence</label>
-            <input type="text" id="societe" name="societe" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
-        </div>
-        
-        <div>
-            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
-        </div>
-        
-        <div class="flex items-center">
-            <input type="checkbox" id="financement" name="financement" class="w-5 h-5 bg-gray-700 rounded border-gray-600 text-blue-600 focus:ring-blue-500 focus:ring-offset-gray-800">
-            <label for="financement" class="ml-2 text-sm text-gray-300">Je souhaite des informations sur le financement</label>
-        </div>
-        
-        <div id="form-status" class="hidden p-4 rounded-lg">
-            <p id="success-message" class="text-green-500 font-medium hidden">Votre message a été envoyé avec succès. Nous vous contacterons bientôt.</p>
-            <p id="error-message" class="text-red-500 font-medium hidden">Une erreur technique s'est produite. Veuillez vérifier votre connexion internet et réessayer ultérieurement.</p>
-        </div>
-        
-        <div>
-            <button type="submit" id="submit-btn" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold rounded-lg transition transform hover:scale-105 shadow-lg">
-                Envoyer ma demande
-            </button>
-        </div>
-    </form>
-</div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><script type="text/javascript">
+                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><script type="text/javascript">
     (function() {
         // Initialize EmailJS with your User ID
         emailjs.init("A2NhENEhTjdjd_JFZ");
